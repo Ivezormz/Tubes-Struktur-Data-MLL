@@ -36,7 +36,7 @@ struct ListR{
     adrResep last;
 };
 
-void start();
+void menu();
 void createList(ListR &L);
 adrResep createElmResep(string nama, int durasi, string kategori);
 adrBahan createElmBahan(string nama, int jumlah, string deskripsi);
@@ -48,12 +48,18 @@ void insertBahan(adrResep &p, adrBahan q);
 void viewAll(ListR L);
 adrResep searchResepByNama(ListR L, string nama);
 void searchResepByDurasi(ListR L, int durasi);
-void searchResepByBahan(ListR L, adrBahan q);
+void searchResepByBahan(ListR L, string bahan);
 void deleteResep(ListR &L, string nama);
 void deleteDurasiFromResep(ListR &L, string nama);
-void deleteBahanFromResep(ListR &L, string namaResep, string NamaBahan);
+void deleteBahanFromResep(adrResep p, string NamaBahan);
 int countResep(ListR L);
 void viewResepByCategory(ListR L, string kategori);
 void durasiMinMax(ListR L);
-void viewResepByJumlahBahan(ListR L);
+void viewResepByJumlahBahan(ListR L, int jumlah);
+string pilihKategori(int x);
+void loadDummyData(ListR &L);
+void showCover();
+void showPenutup();
+void updateKategoriResep(ListR &L, string namaResep);
+void showNamaResep(ListR L);
 #endif // MLL_H_INCLUDED
